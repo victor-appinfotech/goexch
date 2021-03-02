@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M20,14.4 L18.75,15.12 L18.75,6.4777215 L10,1.43949367 L1.25,6.4777215 L1.25,15.12 L0,14.4 L0,5.75797467 L10,0 L20,5.75797467 L20,14.4 Z M16.0140653,6.3418709 L16.0140653,7.78136457 L10,4.318481 L3.75,7.91721517 L3.75,15.1146835 L10,18.7134177 L16.0140653,15.2505341 L16.0140653,16.6900278 L10,20.1529113 L2.5,15.8344303 L2.5,7.19746833 L10,2.87898733 L16.0140653,6.3418709 Z M13.6084392,7.83570481 L13.6084392,9.27519847 L10,7.19746833 L6.25,9.35670883 L6.25,13.6751898 L10,15.8344303 L13.6084392,13.7567002 L13.6084392,15.1961939 L10,17.273924 L5,14.3949367 L5,8.636962 L10,5.75797467 L13.6084392,7.83570481 Z M11.25,12.6 L8.75,12.6 L8.75,13.7 L7.5,12.98 L7.5,10.0764557 L10,8.636962 L12.5,10.0764557 L12.5,12.98 L11.25,13.7 L11.25,12.6 Z M11.25,11.8 L11.25,10.7962025 L10,10.0764557 L8.75,10.7962025 L8.75,11.8 L11.25,11.8 Z" id="icon-multiples-path-1"></path>
+    </defs>
+    <g id="Matchbook-Icons-icon-multiples" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3.-UI/multiples-icon-multiples">
+            <g id="Group-icon-multiples" transform="translate(2.000000, 2.000000)">
+                <mask id="mask-2-icon-multiples" fill="white">
+                    <use xlink:href="#icon-multiples-path-1"></use>
+                </mask>
+                <use id="Shape-icon-multiples" stroke="#FFFFFF" stroke-width="0.5" fill="#FFFFFF" xlink:href="#icon-multiples-path-1"></use>
+                <g id="5.-Mask/White-icon-multiples" mask="url(#mask-2-icon-multiples)" fill="#FFFFFF">
+                    <g transform="translate(-2.000000, -2.000000)" id="White-Mask-icon-multiples">
+                        <rect x="0" y="0" width="24" height="24"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
