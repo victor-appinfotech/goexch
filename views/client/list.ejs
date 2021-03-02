@@ -1,0 +1,81 @@
+<div class="col-12 col-sm-12 col-lg-12 mb-5 mt-3 live-bet-tbl">
+  <div class="match-detail-section">
+    <div class="col-10 col-sm-10 session-details white-text">
+      <div class="row my-3">
+        <div class="col-10 col-sm-10">
+          <a href="">Client List </a>
+          <p class="match-amt"></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 col-sm-4 tbl-head-icon text-right add-btn">
+      <button type="button" class="btn btn-primary btn-rounded btn-sm mr-2 px-2 waves-effect waves-light add_new"><i class="fas fa-user-plus pr-1"></i> Add Account</button>
+    </div>
+  </div>
+  <div class="match-val-tbl client-list-tbl">
+    <table id="client-list" class="display" style="width:100%">
+      <thead>
+          <tr>
+              <th>User Name</th>
+              <th class="text-center">Currency</th>
+              <th class="text-right">Credit Ref.</th>
+              <th class="text-right">Balance</th>
+              <th class="text-right">Exposure</th>
+              <th class="text-right">Available Balance</th>
+              <th class="text-right">P/L</th>
+              <th class="text-center">USt.</th>
+              <th class="text-center">BSt.</th>
+              <th class="text-center">Action</th>
+          </tr>
+      </thead>
+      <tbody></tbody>
+  </table>
+
+<li class="item hidden">1</li><!--
+--><li class="item hidden">2</li><!--
+--><li class="item hidden">3</li><!--
+--><li class="item hidden">4</li><!--
+--><li class="item hidden">5</li><!--
+--><li class="item hidden">6</li>
+  </div>
+</div>
+
+  <script>
+    $(document).ready(function() {
+		$('#client-list').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "client/cdata",
+                "type": "POST",
+                "beforeSend": function (request) {
+                    request.setRequestHeader("CSRF-Token", tok);
+                },
+                complete:function(){
+                  $('[data-toggle="tooltip"]').tooltip()
+                }
+            },
+            "columnDefs": [
+              { "orderable": false, "targets": [3,4,5,6,7,8] }
+            ]
+        });
+
+    $('#body-main').on('click','.add_new',function(){
+        $.get('/client/form',function(body){
+          $('.modal-title').text('Create Account');
+          $('.modal-body').html(body);
+          $('#orangeModalSubscription').modal('show');
+        });
+    });
+
+    
+
+    /* $('#body-main').on('change','select[name=user_type]',function(){
+              if($(this).val() == 1){
+                $('.can').show('slow');
+              }else{
+                $('.can').hide('slow').find('input').prop("checked", false);
+              }
+          }) */
+    });
+  </script>

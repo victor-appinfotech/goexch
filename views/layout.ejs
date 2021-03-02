@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="pass" content="<%=pass%>">
+  <title>Go Exchange</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="img/favicon.png" type="image/x-icon">
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- MDBootstrap flags -->
+    <link href="css/addons/flag.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:300,500,700&display=swap" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dataTables.min.css">
+</head>
+<body class="pb-550">
+<main class="">
+  <!-- Start your project here-->
+  <header>
+  <div class="container-fluid primary-color nav-section">
+
+    <div class="row">
+
+      <!-- <div class="col-2 col-sm-1">
+        
+      </div> -->
+      <div class="col-7 col-sm-6 pr-0">
+
+        <!--Navbar-->
+  <nav class="navbar navbar-dark top-nav-links">
+    <form class="form-inline">
+      <div class="md-form my-0">
+        <a class="navbar-brand" href="#"><img width="100%" class="" src="img/logo_1.png"></a>
+        <div class="search-input">
+        <i class="fas fa-search" aria-hidden="true"></i>
+        <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+          aria-label="Search">
+        </div>
+      </div>
+      
+    </form>
+  </nav>
+  
+  <!--Navbar-->
+      </div>
+      <div class="col-5 col-sm-6 pt-lg-2">
+        <div class="float-right login-btn">
+          <a href="/logout" class="btn btn-danger btn-rounded btn-sm"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+    </div>
+  <div class="navigation-bar primary-color px-2">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+      <!-- Navbar brand -->
+      
+    
+      <!-- Collapse button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="basicExampleNav">
+    
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto nav-desktop">
+
+          <!-- Dropdown -->
+          <li class="nav-item">
+            <a class="nav-link" href="/gmsUsers">GMS Users</a>            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/client">Clients</a>            
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Banking
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Risk Management</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink2" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">Reports</a>
+            <div class="dropdown-menu dropdown-primary animated fadeIn" aria-labelledby="navbarDropdownMenuLink2">
+              <a class="dropdown-item" href="#">Client Report</a>
+              <a class="dropdown-item" href="#">Admin Report</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Team Management</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bet List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Live Bets</a>
+          </li> -->
+        </ul>
+        <!-- Links -->
+
+         <div class="nav-device">
+          <ul class="block-list-nav list-unstyled mb-0">
+            <li class="active">
+              <a href="#"><span class="fa fa-home"></span> <div class="dev-nav-text">Home</div></a>
+            </li>
+            <li>
+                <a href="#"><span class="fa fa-user"></span> <div class="dev-nav-text">In Play</div></a>
+            </li>
+            <li>
+              <a href="#"><span class="fas fa-university"></span> <div class="dev-nav-text">My Markets</div></a>
+            </li>
+            <li>
+              <a href="#"><span class="fas fa-thumbtack"></span> <div class="dev-nav-text">Pinned Markets</div></a>
+            </li>
+          </ul>
+
+
+          <div class="device-left-section-menu">
+            
+            
+
+            <div class="top-sports" style="display: none;">
+              <hr class="" />
+                <h1>Top Sports</h1>
+                <div>
+                  <ul class="block-list-nav list-unstyled mb-2">
+                    <li class="active">
+                      <a href="#"><span class="fas fa-volleyball-ball"></span> <div class="dev-nav-text">Cricket</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fas fa-futbol"></span> <div class="dev-nav-text">Soccer</div></a>
+                    </li>
+                    <li>
+                      <a href="#"><span class="fas fa-table-tennis"></span> <div class="dev-nav-text">Tennis</div></a>
+                    </li>
+                    <li>
+                      <a href="#"><span class="fas fa-thumbtack"></span> <div class="dev-nav-text">Pinned Markets</div></a>
+                    </li>
+                  </ul> 
+                </div>
+              <hr class="" />
+            </div>
+
+            
+            
+
+        </div>
+        </div>
+    
+        
+      </div>
+      <!-- Collapsible content -->
+    
+    </nav>
+    <div class="top-right-border"></div>
+  </div>
+
+  </div>
+  
+</header>  
+  <!-- End your project here-->
+
+
+  
+  
+  <section id="body-main">
+    <div class="container">
+      <div class="body-cont">
+        
+        <div class="p-0">
+
+          <!-- <ul class="row total-val">
+            <li class="col-2 col-sm-2">
+              <label class="small-text">Total Balance</label>
+              <p>PTH 207,325.26</p>
+            </li>
+            <li class="col-2 col-sm-2">
+              <label class="small-text">Total Exposure</label>
+              <p>PTH <span class="red-text">(114.02)</span></p>
+            </li>
+            <li class="col-2 col-sm-2">
+              <label class="small-text">Total Avail. bal.</label>
+              <p>PTH 207,211.24</p>
+            </li>
+            <li class="col-2 col-sm-2">
+              <label class="small-text">Balance</label>
+              <p>PTH 388,110.00</p>
+            </li>
+            <li class="col-2 col-sm-2">
+              <label class="small-text">Total Balance</label>
+              <p>PTH 207,325.26</p>
+            </li>
+            <li class="col-2 col-sm-2">
+              <label class="small-text">Total Balance</label>
+              <p>PTH 207,325.26</p>
+            </li>
+          </ul> -->
+          <div class="row">              
+
+            <%-body%>
+            
+          </div>
+        </div>        
+      </div>
+
+
+      <!-- Modal window section -->
+
+      <% include partials/model %>
+
+      <!-- <div class="text-center">
+        <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#edit-credit-ref">Launch
+          Modal Login Form</a>
+      </div> -->
+     <!-- Modal window section ends here --> 
+      
+    </div>  
+  </section>
+ 
+  
+</main>  
+  <footer class="footer pr-0 pl-180">
+    <div class="footer-bg container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          
+          <div class="about-comp mb-6 mb-sm-0">
+            <h1>Gemini</h1>
+            <p class="mb-1">Matchbook is a peer-to-peer betting exchange designed for smart bettors who want more value. Offering deep liquidity and low commissions, Matchbook returns maximum value to bettors.</p>
+            <p class="">On Matchbook, bettors find better odds, a clean and easy-to-use betting interface, and helpful customer support.</p>
+          </div>
+
+          <div class="contact-gemini mb-6 mb-sm-4">
+            <h2 class="mb-2 small-heading">CONTACT <span>GEMINI</span></h2 v>
+            <div class="contact-details mb-4">
+              <div class="uk-map">
+                <img class="d-block" src="img/svg/uk-map.svg">
+              </div>
+              <div class="country-name pl-2">
+                <span>United Kingdom</span>
+                <a href="">(+44) 203 642 6867</a>
+              </div>
+            </div>
+
+            <div class="contact-details">
+              <div class="uk-map">
+                <img class="d-block" src="img/svg/ireland-map.svg">
+              </div>
+              <div class="country-name pl-2">
+                <span>Republic of Ireland</span>
+                <a href="">(+353) 21 242 8626</a>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <div class="support-link mb-6 mb-sm-4">
+            <a href="" class="email mb-2"><i class="fas fa-envelope"></i> support@matchbook.com</a>
+            <a href="" class="live"><i class="fas fa-comment-alt"></i> Live Chat with our Customer Support Team</a>
+          </div>
+
+          <div class="social-page mb-6 mb-sm-0">
+            <h2 class="mb-2 small-heading">FOLLOW <span>GEMINI</span></h2>
+            <a href="" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="" class="g-plus"><i class="fab fa-google-plus-g"></i></a>
+            <a href="" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="" class="twitter"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6">
+          <div class="footer-links payment-type mb-4">
+            <h2 class="mb-2 small-heading">Available funding methods</h2>
+            <a href="" class="visa"></a>
+            <a href="" class="mastercard"></a>
+            <a href="" class="skrill"></a>
+            <a href="" class="neteller"></a>
+            <a href="" class="pay-safe"></a>
+          </div>
+
+          <div class="footer-links res-gaming mb-6">
+            <h2 class="mb-2 small-heading">RESPONSIBLE GAMBLING</h2>
+            <a href="" class="alderney-logo"></a>
+            <a href="" class="gambling-comm"></a>
+            <a href="" class="gamcare-cer"></a>
+            <a href="" class="gamcare-problem"></a>
+            <a href="" class="plus"></a>
+            <a href="" class="gamstop-logo"></a>
+            <div class="col-12 pl-0">
+              <p class="detail-text">
+                Licensed & Regulated by the Gambling Commission for customers in GB</p>
+            </div>
+          </div>
+
+          <div class="footer-links parterns">
+            <h2 class="mb-2 small-heading">OUR PARTNERS</h2>
+            <a href="" class="matchbook-chcr"></a>
+            <a href="" class="sanddown-logo"></a>
+            <a href="" class="kempton-logo"></a>
+            <a href="" class="cork-racecourse-logo"></a>
+            <a href="" class="york-racecourse-logo"></a>
+            <a href="" class="matchbook-ebf"></a>
+            <a href="" class="naas-racecourse"></a>
+            <a href="" class="chelt-jockeys"></a>
+            <a href="" class="limerick-racecourse"></a>
+            <a href="" class="gamblers-logo"></a>
+            
+          </div>
+
+          <div class="star-rating">
+            <span id="rateMe1"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid copy-right-section">
+      <div class="row">
+      <div class="col-12 col-sm-6">
+        <p>© 2020 <span>Gemini software</span> All Rights Reserved</p>
+      </div>
+
+      <div class="col-12 col-sm-6 footer-links text-sm-right text-center">
+        <a href="" class="">Help</a>
+        <a href="" class="">About</a>
+        <a href="" class="">Contact</a>
+      </div>
+    </div>
+    </div>
+  </footer>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/momento.js"></script>
+  <script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+
+  
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- mdb flags -->
+  <script type="text/javascript" src="js/addons/flag.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- rating.js file -->
+  <script src="js/addons/rating.js"></script>
+  
+  <script src="js/main.js"></script>
+  
+  <!-- Your custom scripts (optional) -->
+  <script type="text/javascript"></script>
+
+</body class="pb-550">
+</html>

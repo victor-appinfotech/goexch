@@ -1,0 +1,55 @@
+<form method="POST" action="/client/save" class="bs-component">
+    <div class="form-group">
+        <label>User Type</label>
+        <select class="form-control" name="user_type"  id="user_type">
+            <option value="">Select</option>
+            <option value="1">Admin</option>
+            <option value="2">User</option>
+        </select>
+        <small class="form-text text-muted error user_type"></small>
+      </div>
+      <div class="form-group can" style="display: none;">
+        <label>Can create admin</label>
+        <input type="checkbox" class="form-check-input" style="margin-left: 15px;" name="can" value="1">
+        <small class="form-text text-muted">The user will be able to create furhter admin</small>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" name="username">
+        <small class="form-text text-muted error username"></small>
+      </div>
+      <div class="form-group">
+        <label>Client Name</label>
+        <input type="text" class="form-control" name="client_name">
+        <small class="form-text text-muted error client_name"></small>
+      </div>
+      <div class="form-group">
+        <label>Phone No.</label>
+        <input type="text" class="form-control" name="phone" maxlength="10">
+        <small class="form-text text-muted error phone"></small>
+      </div>
+      <div class="form-group">
+        <label>Credit Ref.</label>
+        <input type="text" class="form-control" name="credit_reference">
+        <small class="form-text text-muted error credit_reference"></small>
+      </div>
+      <div class="form-group">
+        <label>Currency</label>
+        <input type="text" class="form-control" name="currency">
+        <small class="form-text text-muted error currency"></small>
+      </div>
+      <div class="form-group">
+        <label>User Rate</label>
+        <input type="text" class="form-control" name="rate">
+        <small class="form-text text-muted error rate"></small>
+      </div>
+      <div class="form-group">
+        <label>Client Status</label>
+        <select class="form-control" name="status">
+          <option value="0" selected>Deactive</option>
+          <option value="1">Active</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      <button type="button" class="btn btn-primary turnkey">Create</button>    
+  </form>

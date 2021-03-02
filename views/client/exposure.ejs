@@ -1,0 +1,18 @@
+<div class="credit-ref-tabs">
+    <div class="flex-table-layout">
+      <div class="row table-heading justify-content-between">
+        <div class="col-4 order-1 p-2">Date/Time</div>
+        <div class="col-4 order-2 text-center p-2">Old Value</div>
+        <div class="col-4 order-3 text-center p-2">New Value</div>
+      </div>
+      <% if (Edata!=undefined && Edata!='') { %> 
+        <% Edata.forEach(exp => { %>
+          <div class="row table-body justify-content-between">
+            <div class="col-4 order-1 p-2"><span><%=exp.date%></span>	</div>
+            <div class="col-4 order-2 text-center p-2"><%=exp.oldvalue%></div>
+            <div class="col-4 order-3 text-center p-2"><%=exp.newvalue%></div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>

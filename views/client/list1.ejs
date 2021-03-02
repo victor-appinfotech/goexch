@@ -1,0 +1,169 @@
+  <div class="col-12 col-sm-9 col-lg-9 mb-5 mt-3 live-bet-tbl">
+    <div class="match-detail-section">
+      <div class="col-10 col-sm-10 session-details white-text">
+        <div class="bc-icons-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb match-breadcrumb">
+              <li class="breadcrumb-item"><a class="white-text" href="#">Soccer</a><i class="fas fa-caret-right mx-2"
+                  aria-hidden="true"></i></li>
+              <li class="breadcrumb-item"><a class="white-text" href="#">Germany</a><i class="fas fa-caret-right mx-2"
+                  aria-hidden="true"></i></li>
+
+              <li class="breadcrumb-item"><a class="white-text" href="#">Bundesliga</a><i class="fas fa-caret-right mx-2"
+                aria-hidden="true"></i></li>    
+              <!-- <li class="breadcrumb-item active">Data</li> -->
+            </ol>
+          </nav>
+        </div>
+        <div class="row">
+          <div class="col-10 col-sm-10">
+            <a href="">Client Demo List </a>
+            <p class="match-amt">Lorem ipsum dolor sit amet</p>
+          </div>
+          <div class="col-2 col-sm-2">
+            <button type="button" class="btn btn-success btn-rounded btn-sm waves-effect waves-light add_new"><i class="fas fa-user-plus"></i>Add New</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 col-sm-2 tbl-head-icon text-right">
+        <a href=""><span class="multiples-icon small-icon"></span></a>
+        <a href=""><i class="far fa-clock white-text pr-1"></i> </a>
+        <a href=""><i class="fas fa-retweet"></i></a>
+      </div>
+    </div>
+    <div class="match-val-tbl client-list-tbl">
+      
+
+
+      <table id="client-list" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Currency</th>
+                <th>Credit Ref.</th>
+                <th>Balance</th>
+                <th>Exposure</th>
+                <th>Available Balance</th>
+                <th>P/L</th>
+                <th>USt./BSt.</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          <% if (clients!=undefined && clients!='') { %> 
+            <% clients.forEach(client => { %>
+              <tr class="table-light">
+                
+                <td>
+                  <% if(client.dataValues.user_type == 1){ %>
+                    <span class="badge badge-success">A</span>
+                  <% }else{ %> 
+                    <span class="badge badge-warning">U</span>  
+                  <% } %>
+                  <%=client.dataValues.username %>
+                </td>
+                <td><%=client.dataValues.currency %></td>
+                <td>
+                    <%=client.dataValues.credit_reference %>
+                    <a href="#"><i class="fa fa-pencil-alt"></i></a>
+                </td>
+                <td><%=client.dataValues.balance %></td>
+                <td><%=client.dataValues.exposure %> <i class="fas fa-eye"></i></td>
+                <td><%=client.dataValues.aval_balance %></td>
+                <td><%=client.dataValues.pnl %></td>
+                <td>
+                  <i class="fas fa-check-square"></i>
+                  <i class="fas fa-check-square"></i>
+                </td>
+                <td>
+                  <span class="badge badge-secondary"><i class="fa fa-user"></i></span>
+                  <span class="badge badge-default">D</span>
+                  <span class="badge badge-danger">W</span>
+                  <!-- <a href="#" onclick="return confirm('Are you sure you want to delete this?')">Delete</a> -->
+                </td>              
+              </tr>
+              <% }) %>
+            <% } %>
+    </table>
+
+
+<li class="item hidden">1</li>
+<li class="item hidden">2</li>
+<li class="item hidden">3</li>
+<li class="item hidden">4</li>
+<li class="item hidden">5</li>
+<li class="item hidden">6</li>
+    </div>
+</div>
+
+
+
+  <script>
+    $(document).ready(function() {
+
+        $('#body-main').on('click','.add_new',function(){
+            $.get('/client/form',function(body){
+              $('.modal-title').text('Create Account');
+              $('.modal-body').html(body);
+              $('#exampleModal').modal('show');
+            });
+        });
+
+        $('#body-main').on('click','.turnkey',function(e){
+            e.preventDefault();
+            var form = $(this).closest('form');
+            var action = form.attr('action');
+
+            $.fn.serializeObject = function()
+            {
+                var o = {};
+                var a = this.serializeArray();
+                $.each(a, function() {
+                    if (o[this.name] !== undefined) {
+                        if (!o[this.name].push) {
+                            o[this.name] = [o[this.name]];
+                        }
+                        o[this.name].push(this.value || '');
+                    } else {
+                        o[this.name] = this.value || '';
+                    }
+                });
+                return o;
+            };
+
+            $.post({
+                url:action,
+                data:form.serializeObject(),
+                beforeSend:function(){
+                    $('.turnkey').attr('disabled','disabled').html('Processing...');
+                },
+                success:function(response, status, jqXHR){
+                  if(response.exception) {
+                    $('.error').text('');
+                    $.each(response.err, function(i, item) {
+                      $("."+i).text(item.msg);
+                    });
+                  }else{
+                    console.log('Success');
+                    window.location.replace(response.url);
+                    return;
+                  }
+
+                  $('.turnkey').removeAttr('disabled').html('Create');
+                },
+                done:function() {
+                  $('.turnkey').removeAttr('disabled').html('Create');
+                },
+                fail:function(jqxhr, settings, ex) { alert('failed, ' + ex); }
+            })
+        })
+
+        $('#body-main').on('change','select[name=user_type]',function(){
+              if($(this).val() == 1){
+                $('.can').show('slow');
+              }else{
+                $('.can').hide('slow').find('input').prop("checked", false);
+              }
+          })
+    });
+  </script>

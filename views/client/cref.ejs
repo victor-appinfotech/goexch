@@ -1,0 +1,52 @@
+<div class="credit-ref-tabs mx-2">
+  
+    <ul class="nav mb-3" id="myClassicTabOrange" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link  waves-light active show" id="profile-tab-classic-orange" data-toggle="tab" href="#profile-classic-orange"
+          role="tab" aria-controls="profile-classic-orange" aria-selected="true"><i class="fas fa-credit-card mr-2"></i>Credit Ref.</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link waves-light" id="follow-tab-classic-orange" data-toggle="tab" href="#follow-classic-orange"
+          role="tab" aria-controls="follow-classic-orange" aria-selected="false"><i class="fas fa-history fa-1x pr-2"
+            aria-hidden="true"></i> History</a>
+      </li>      
+    </ul>
+
+    <div class="tab-content card" id="myClassicTabContentOrange">
+      <div class="tab-pane fade active show" id="profile-classic-orange" role="tabpanel" aria-labelledby="profile-tab-classic-orange">
+        <div class="form-lg cust-label disabled-element mb-4">
+          <label data-error="wrong" data-success="right" for="current">Current</label>
+          <input id="current" class="form-control form-control-lg" type="text" value="<%=cref%>" disabled>
+        </div>
+        <div class="md-form md-outline form-lg">
+          <input id="new" class="form-control form-control-lg" type="text">
+          <label for="new">New</label>
+        </div>
+        <div class="md-form md-outline form-lg">
+          <input id="password" class="form-control form-control-lg" type="text">
+          <label for="password">Password</label>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button class="btn btn-default btn-sm">Submit</button>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="follow-classic-orange" role="tabpanel" aria-labelledby="follow-tab-classic-orange">
+        <div class="flex-table-layout">
+          <div class="row table-heading justify-content-between">
+            <div class="col-4 order-1 p-2">Date/Time</div>
+            <div class="col-4 order-2 text-center p-2">Old Value</div>
+            <div class="col-4 order-3 text-center p-2">New Value</div>
+          </div>
+          <% if (history!=undefined && history!='') { %> 
+            <% history.forEach(cref => { %>
+              <div class="row table-body justify-content-between">
+                <div class="col-4 order-1 p-2"><span><%=cref.createdAt%></span></div>
+                <div class="col-4 order-2 text-center p-2"><%=cref.old_value%></div>
+                <div class="col-4 order-3 text-center p-2"><%=cref.new_value%></div>
+              </div>
+            <% }) %>
+          <% } %>
+        </div>
+      </div>      
+    </div>
+  </div>

@@ -1,0 +1,74 @@
+<!-- Create new client -->
+<div class="modal fade create-account" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-notify modal-warning modal-lg" role="document">        
+  <!--Content-->
+  <div class="modal-content">
+    
+    <div class="row">
+      <div class="col-5 pr-0">
+        <div class="modal-image">
+          <div class="image-overlay"></div>
+        </div>              
+      </div>
+      <div class="col-7 pl-0">
+        <!--Header-->
+        <div class="modal-header text-center px-3 py-1">
+          <h4 class="modal-title w-100 text-left py-2">Create Account</h4>
+          <button type="button" class="close mt-1 pt-2" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="">&times;</span>
+          </button>
+        </div>
+          <!--Body-->
+          <div class="modal-body py-0 pb-3"></div>                
+      </div>
+    </div>         
+  </div>
+  <!--/.Content-->
+</div>
+</div>
+<!--/ New Client-->
+
+
+
+<!-- Common Model -->
+<div class="modal fade com" id="pkComModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <h4 class="modal-title w-100 text-left"></h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body mx-3"></div>      
+      </div>
+    </div>
+  </div>
+<!--/ Common Model -->
+
+<!--/ Delete Model -->
+<div class="modal fade" id="pkTrashModel" tabindex="-1" role="dialog" aria-labelledby="myTrashModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this ?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form method="POST" action="#">
+          <input type="hidden" name="resource_id">
+          <button type="button" class="btn btn-danger turnkey" disabled>Delete</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Delete Model -->

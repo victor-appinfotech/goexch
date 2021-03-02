@@ -1,0 +1,64 @@
+<form method="POST" action="/client/save">
+<div class="form-lg cust-label mb-4">
+    <label>Account Type</label>
+    <select class="browser-default custom-select" name="user_type"  id="user_type">
+      <option value="1" selected>Admin</option>
+      <option value="2">User</option>
+    </select>
+  </div>  
+  
+  <div class="custom-control custom-checkbox checkbox-small blue-check-cont rounded can">
+    <input type="checkbox" class="custom-control-input" id="defaultUnchecked" name="can" value="1" checked>
+    <label class="custom-control-label" for="defaultUnchecked">Can Create Further Admins</label>
+  </div>
+  
+  <!-- Large outline input -->
+  <div class="md-form md-outline form-lg">
+    <label for="username">Username</label>
+    <input id="username" class="form-control form-control-lg" type="text" name="username">
+  </div>
+  
+  <div class="md-form md-outline form-lg">
+    <input id="form-lg" class="form-control form-control-lg" type="text" name="client_name">
+    <label for="form-lg">Client Name</label>
+  </div>
+  
+  <div class="md-form md-outline form-lg phone-input">
+    <div class="dropdown">
+      <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">
+        <span id="selected" data-html="true"><i class="ireland flag"></i></span><span class="caret"></span></a>
+        <ul class="dropdown-menu animated fadeIn">
+          <li><a href="#" data-html="true"><i class="uae flag"></i></a></li>
+          <li><a href="#" data-html="true"><i class="armenia flag"></i></a></li>
+          <li><a href="#" data-html="true"><i class="australia flag"></i></a></li>
+          <li><a href="#" data-html="true"><i class="canada flag"></i></a></li>
+          <li><a href="#" data-html="true"><i class="switzerland flag"></i></a></li>
+          <li><a href="#" data-html="true"><i class="germany flag"></i></a></li>
+        </ul>
+      </div>
+      <input id="phone" class="form-control form-control-lg" type="text" name="phone" maxlength="10">
+      <label for="phone">Phone No.</label>
+    </div>
+  
+    <!-- Large outline input -->
+    <div class="md-form md-outline form-lg">
+      <input id="Currency" class="form-control form-control-lg" type="text" name="currency">
+      <label for="Currency">Currency</label>
+    </div>
+  
+    <div class="md-form md-outline form-lg">
+      <input id="Credit" class="form-control form-control-lg" type="text" name="credit_reference">
+      <label for="Credit">Credit Reference</label>
+    </div>
+  
+    <div class="md-form md-outline form-lg mb-0">
+      <input id="rate" class="form-control form-control-lg" type="text" name="rate">
+      <label for="rate">User Rate</label>
+    </div>
+
+    <div class="text-right pt-3">
+        <a type="button" class="btn btn-primary waves-effect m-0 turnkey">Create <i class="fas fa-paper-plane"></i></a>
+      </div>
+</form>
+  
+  

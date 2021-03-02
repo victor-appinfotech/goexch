@@ -1,0 +1,64 @@
+<div class="col-12 col-sm-12 col-lg-12 mb-5 mt-3 live-bet-tbl">
+    <div class="match-detail-section">
+      <div class="col-10 col-sm-10 session-details white-text">
+        <div class="row my-3">
+          <div class="col-10 col-sm-10">
+            <a href="">GMS Users</a>
+            <p class="match-amt"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-5 col-sm-4 tbl-head-icon text-right add-btn">
+        <button type="button" class="btn btn-primary btn-rounded btn-sm mr-2 px-2 waves-effect waves-light mdl" data-target="gmsUsers/form" data-title="Create Account"><i class="fas fa-user-plus pr-1"></i> Add Account</button>
+        
+      </div>
+    </div>
+    <div class="match-val-tbl client-list-tbl">
+      <table id="client-list" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th class="text-center">S.No.</th>
+                <th class="text-center">User Type</th>
+                <th class="text-center">User Name</th>
+                <th class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+      <li class="item hidden">1</li><!--
+      --><li class="item hidden">2</li><!--
+      --><li class="item hidden">3</li><!--
+      --><li class="item hidden">4</li><!--
+      --><li class="item hidden">5</li><!--
+      --><li class="item hidden">6</li>
+    </div>
+  </div>
+    <script>
+    $(document).ready(function() {
+        $('#client-list').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "gmsUsers/cdata",
+                "type": "POST",
+                "beforeSend": function (request) {
+                    request.setRequestHeader("CSRF-Token", tok);
+                },
+                complete:function(){
+                // $('[data-toggle="tooltip"]').tooltip()
+                }
+            },
+            "columnDefs": [
+            { "orderable": false, "targets": [0] }
+            ]
+        });
+  
+        // $('#body-main').on('click','.add_new',function(){
+        //   $.get('/gmsUsers/form',function(body){
+        //     $('.modal-title').text('Create Account');
+        //     $('.modal-body').html(body);
+        //     $('#orangeModalSubscription').modal('show');
+        //   });
+        // });
+    });
+    </script>
